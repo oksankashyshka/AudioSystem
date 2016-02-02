@@ -1,9 +1,16 @@
 #pragma once
+
+#include <vector>
+
+
 class CAudioDevice
 {
 public:
 	CAudioDevice();
 	~CAudioDevice();
+
+	//vector<Song> m_vecSongs;//here we will contain our songs
+	int m_nCurrSong;//number of current song
 };
 
 /*class AudioDevice
