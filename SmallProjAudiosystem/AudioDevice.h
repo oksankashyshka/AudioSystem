@@ -1,38 +1,37 @@
+//header to class CAudioDevice
 #pragma once
-
 #ifndef AUDIO_DEVICE_H_
-#define AUDIO_DEVICE_H_	
+#define AUDIO_DEVICE_H_
 
 #include <vector>
 
+#include "Song.h"
 
 class CAudioDevice
 {
 public:
-	CAudioDevice();
+	CAudioDevice() = default;
 	~CAudioDevice();
 
-	//vector<Song> m_vecSongs;//here we will contain our songs
-	int m_nCurrSong;//number of current song
-};
+	Song getSong(int numSong) const { return vecSongs_[numSong]; }
+	int getCurrSong() const { return numCurrSong_; }//number of current song
 
-/*class AudioDevice
-{
-public:
-	AudioDevice()//default construct
+	void setCurrSong(int numSong)
 	{
-		m_vecSongs.clear();//before work we clear our vector
-		m_nCurrSong = 0;
+		if ((numSong >= 0) && (numSong < vecSongs_.size())) numCurrSong_ = numSong;
 	}
-	virtual void ShowDevice() = 0;//pure virtual function
-	Song GetSong(int nSong) { return m_vecSongs[nSong];}
-	int GetCurrSong() { return m_nCurrSong; }//give us number of current song
-	void SetCurrSong( int nSong ) 
-	{ if ( nSong >= 0 && nSong < m_vecSongs.size() ) m_nCurrSong = nSong; } 
-	virtual void Load(string sAress) = 0;//pure virtual function
-//vars
-	vector<Song> m_vecSongs;//here we will contain our songs
-	int m_nCurrSong;//number of current song
-	};*/
+
+	void SetCurrSong(int numSong)
+	{
+		if ((numSong >= 0) && (numSong < vecSongs_.size())) numCurrSong_ = numSong;
+	}
+
+	virtual void load(std::string sAress) = 0;
+	virtual void showDevice() = 0;//pure virtual function
+
+private:
+	std::vector<Song> vecSongs_;//here we will contain our songs
+	int numCurrSong_;//number of current song
+};
 
 #endif //AUDIO_DEVICE_H_	

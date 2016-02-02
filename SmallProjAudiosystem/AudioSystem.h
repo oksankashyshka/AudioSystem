@@ -1,5 +1,5 @@
+//header to class CAudioSystem
 #pragma once
-
 #ifndef AUDIO_SYSTEM_H_
 #define AUDIO_SYSTEM_H_
 
