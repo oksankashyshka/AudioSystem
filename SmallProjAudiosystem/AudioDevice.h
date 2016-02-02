@@ -20,11 +20,6 @@ public:
 		if ((numSong >= 0) && (numSong < vecSongs_.size())) numCurrSong_ = numSong;
 	}
 
-	void setCurrSong(int numSong)
-	{
-		if ((numSong >= 0) && (numSong < vecSongs_.size())) numCurrSong_ = numSong;
-	}
-
 	virtual void load(std::string sAress, const int quantitySongs) = 0;//
 	virtual void showDevice() = 0;//pure virtual function
 
