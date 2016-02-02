@@ -1,3 +1,6 @@
+#ifndef SONG_H_
+#define SONG_H_
+
 #pragma once
 class CSong
 {
@@ -34,3 +37,5 @@ string m_sLyrics;//small part of lyrics
 };
 
 */
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef AUDIO_DEVICE_H_
+#define AUDIO_DEVICE_H_
+
 #pragma once
 
 #include <vector>
@@ -31,3 +34,5 @@ public:
 	vector<Song> m_vecSongs;//here we will contain our songs
 	int m_nCurrSong;//number of current song
 	};*/
+
+#endif
