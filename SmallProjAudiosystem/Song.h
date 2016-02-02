@@ -11,17 +11,17 @@ public:
 	CSong() = default;
 	
 	CSong(const int durationSeconds, const std::string title, const std::string lyrics) :
-		_durationSeconds{ durationSeconds }, _title{ title }, _lyrics{ lyrics }
+		durationSeconds_{ durationSeconds }, title_{ title }, lyrics_{ lyrics }
 	{}
 
-	int GetDuration() { return _durationSeconds; }
-	std::string GetTitle() { return _title; }	
-	std::string GetLyrics() { return _lyrics; }
+	int GetDuration() { return durationSeconds_; }
+	std::string GetTitle() { return title_; }	
+	std::string GetLyrics() { return lyrics_; }
 
 private:
-	int _durationSeconds;//duration of song in seconds
-	std::string _title;//singer or group + name of song
-	std::string _lyrics;//small part of lyrics
+	int durationSeconds_;//duration of song in seconds
+	std::string title_;//singer or group + name of song
+	std::string lyrics_;//small part of lyrics
 };
 
 #endif //SONG_H_
