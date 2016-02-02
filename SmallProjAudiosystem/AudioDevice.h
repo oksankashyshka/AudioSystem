@@ -35,4 +35,4 @@ public:
 	int m_nCurrSong;//number of current song
 	};*/
 
-#endif
+#endif //AUDIO_DEVICE_H_	

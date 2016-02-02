@@ -90,4 +90,4 @@ private:
 	eDeviceType m_eType;
 	vector<Song> sFavourites;
 };*/
-#endif
+#endif //AUDIO_SYSTEM_H_
