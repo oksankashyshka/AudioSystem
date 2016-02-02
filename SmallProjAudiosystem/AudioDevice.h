@@ -20,7 +20,7 @@ public:
 		if ((numSong >= 0) && (numSong < vecSongs_.size())) numCurrSong_ = numSong;
 	}
 
-	void SetCurrSong(int numSong)
+	void setCurrSong(int numSong)
 	{
 		if ((numSong >= 0) && (numSong < vecSongs_.size())) numCurrSong_ = numSong;
 	}
