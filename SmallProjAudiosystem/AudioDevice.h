@@ -11,7 +11,6 @@ class CAudioDevice
 {
 public:
 	CAudioDevice() = default;
-	~CAudioDevice();
 
 	Song getSong(int numSong) const { return vecSongs_[numSong]; }
 	int getCurrSong() const { return numCurrSong_; }//number of current song
