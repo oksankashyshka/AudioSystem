@@ -25,10 +25,10 @@ public:
 		if ((numSong >= 0) && (numSong < vecSongs_.size())) numCurrSong_ = numSong;
 	}
 
-	virtual void load(std::string sAress) = 0;
+	virtual void load(std::string sAress, const int quantitySongs) = 0;//
 	virtual void showDevice() = 0;//pure virtual function
 
-private:
+protected:
 	std::vector<Song> vecSongs_;//here we will contain our songs
 	int numCurrSong_;//number of current song
 };
