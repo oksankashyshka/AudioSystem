@@ -11,7 +11,7 @@ public:
 	Song() = default;
 
 	Song(const int durationSeconds, const std::string title, const std::string lyrics) :
-		durationSeconds_{ durationSeconds }, title_{ title }, lyrics_{ lyrics }
+		durationSeconds_( durationSeconds ), title_( title ), lyrics_( lyrics )
 	{}
 
 	int GetDuration() const { return durationSeconds_; }
