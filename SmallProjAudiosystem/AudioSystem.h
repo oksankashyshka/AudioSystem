@@ -1,3 +1,6 @@
+#ifndef AUDIO_SYSTEM_H_
+#define AUDIO_SYSTEM_H_
+
 #pragma once
 class CAudioSystem
 {
@@ -86,3 +89,4 @@ private:
 	eDeviceType m_eType;
 	vector<Song> sFavourites;
 };*/
+#endif
