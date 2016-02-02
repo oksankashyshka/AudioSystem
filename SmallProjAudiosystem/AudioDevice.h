@@ -21,7 +21,7 @@ public:
 	}
 
 	virtual void load(std::string sAress, const int quantitySongs) = 0;//
-	virtual void showDevice() = 0;//pure virtual function
+	virtual void showDevice() const = 0;//pure virtual function
 
 protected:
 	std::vector<Song> vecSongs_;//here we will contain our songs

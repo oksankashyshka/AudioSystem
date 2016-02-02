@@ -30,7 +30,7 @@ void CCassete::load(std::string sWay, const int quantitySongs)
 	}
 }
 
-void CCassete::showDevice()
+void CCassete::showDevice() const
 {
 	std::cout << "You are working with Cassete." << std::endl;
 }

@@ -35,3 +35,8 @@ void CCD::load(std::string sWay, const int quantitySongs)
 		vecSongs_.push_back(Song(durationSong, sTitle, sLyrics));
 	}
 }
+
+void CCD::showDevice() const
+{
+	std::cout << "You are working with CD." << std::endl;
+}

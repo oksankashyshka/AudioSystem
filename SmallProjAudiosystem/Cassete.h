@@ -11,7 +11,7 @@ class CCassete :
 public:
 	CCassete() = default;
 	void load(std::string sAdress, const int quantitySongs = 10) override;
-	void showDevice() override;
+	void showDevice() const override;
 };
 
 #endif //CASSETE_H_
