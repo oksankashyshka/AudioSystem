@@ -11,14 +11,14 @@ public:
 	Song() = default;
 
 	Song(const int durationSeconds, const std::string title, const std::string lyrics) :
-		durationSeconds_( durationSeconds ), title_( title ), lyrics_( lyrics )
+		duration_in_seconds_( durationSeconds ), title_( title ), lyrics_( lyrics )
 	{}
 
-	int GetDuration() const { return durationSeconds_; }
-	std::string GetTitle() const { return title_; }
-	std::string GetLyrics() const { return lyrics_; }
+	int getDuration() const { return duration_in_seconds_; }
+	std::string getTitle() const { return title_; }
+	std::string getLyrics() const { return lyrics_; }
 private:
-	int durationSeconds_;//duration of song in seconds
+	int duration_in_seconds_;//duration of song in seconds
 	std::string title_;//singer or group + name of song
 	std::string lyrics_;//small part of lyrics
 };

@@ -9,7 +9,7 @@ class CCD :
 {
 public:
 	CCD() = default;
-	void load(std::string sAdress, const int quantitySongs = 10) override;
+	void load(std::string adress, const int quantity_songs = 10) override;
 	void showDevice() const override;
 };
 

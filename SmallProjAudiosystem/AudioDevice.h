@@ -10,22 +10,24 @@
 class CAudioDevice
 {
 public:
-	CAudioDevice() = default;
 
-	Song getSong(int numSong) const { return vecSongs_[numSong]; }
-	int getCurrSong() const { return numCurrSong_; }//number of current song
+	Song getSong(int num_song) const { return vec_songs_[num_song]; }
+	int getCurrSong() const { return num_curr_song_; }//number of current song
 
-	void setCurrSong(int numSong)
+	void setCurrSong(int num_song)
 	{
-		if ((numSong >= 0) && (numSong < vecSongs_.size())) numCurrSong_ = numSong;
+		if ((num_song >= 0) && (num_song < vec_songs_.size())) num_curr_song_ = num_song;
 	}
 
-	virtual void load(std::string sAress, const int quantitySongs) = 0;//
+	virtual void load(std::string adress, const int quantity_songs) = 0;//
 	virtual void showDevice() const = 0;//pure virtual function
 
+	virtual ~CAudioDevice();
 protected:
-	std::vector<Song> vecSongs_;//here we will contain our songs
-	int numCurrSong_;//number of current song
+	CAudioDevice() = default;
+
+	std::vector<Song> vec_songs_;//here we will contain our songs
+	int num_curr_song_;//number of current song
 };
 
 #endif //AUDIO_DEVICE_H_	
