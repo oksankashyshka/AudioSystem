@@ -3,8 +3,6 @@
 #ifndef CASSETE_H_
 #define CASSETE_H_
 
-
-
 #include "AudioDevice.h"
 
 class CCassete :
