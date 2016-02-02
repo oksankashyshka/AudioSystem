@@ -1,7 +1,7 @@
-#ifndef AUDIO_DEVICE_H_
-#define AUDIO_DEVICE_H_
-	
 #pragma once
+
+#ifndef AUDIO_DEVICE_H_
+#define AUDIO_DEVICE_H_	
 
 #include <vector>
 
