@@ -10,7 +10,7 @@ class CCassete :
 {
 public:
 	CCassete() = default;
-	void load(std::string adress, const int quantity_songs = 10) override;
+	void load(const std::string& adress, const int& quantity_songs = 10) override;
 	void showDevice() const override;
 };
 

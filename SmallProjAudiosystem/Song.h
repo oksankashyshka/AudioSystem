@@ -10,7 +10,7 @@ struct Song
 public:
 	Song() = default;
 
-	Song(const int durationSeconds, const std::string title, const std::string lyrics) :
+	Song(const int& durationSeconds, const std::string& title, const std::string& lyrics) :
 		duration_in_seconds_( durationSeconds ), title_( title ), lyrics_( lyrics )
 	{}
 

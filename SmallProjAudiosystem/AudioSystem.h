@@ -3,91 +3,85 @@
 #ifndef AUDIO_SYSTEM_H_
 #define AUDIO_SYSTEM_H_
 
+#include <vector>
+#include <memory>
+
+#include "Cassete.h"
+#include "CD.h"
+#include "LoadSpeaker.h"
+#include "Song.h"
+
 class CAudioSystem
 {
 public:
 	CAudioSystem();
 	~CAudioSystem();
+
+private:
+	enum eDeviceType { eCD, eCassete };
+
+	//void deleteDevice() { if (p_audio_device_ != nullptr) delete p_audio_device_; }
+	void playCurrSong();//here we "play" our song
+	//vars
+	//CAudioDevice* p_audio_device_;
+	CLoadSpeaker load_speaker_;
+	std::vector<Song> vec_favourite_song_;
+	eDeviceType device_type_ = eCD;//at first, our Audiodevice is CD
+	bool system_on_ = false;//at first, our system is off
+
+	//std::unique_ptr<CAudioDevice> p_audio_device_ = std::unique_ptr<CAudioDevice>(new CCD);
+
 };
 
 /*
-class AudioSystem
-{
-public:
-	enum eDeviceType { eCD, eCassete };
 	AudioSystem()
 	{
-		m_pDevice = NULL;//we clear pointer of class Device
-		m_bCondition = false;//at first, our system is off
-		m_eType = eCD;//at first, our Audiodevice is CD
-		SetDevice(eCD);//here we load our CD
-		PlayCurrSong();//here we "play" song
+		p_audio_device_ = nullptr;//we clear pointer of class Device
+		setDevice(eCD);//here we load our CD
 	}
 	~AudioSystem()//here we delete our pointer
 	{
-		DeleteDevice();
+		deleteDevice();
 	}
-	void Run();//here is our menu
-	void IncreaseVolume() { m_Speaker.Increment(); PlayCurrSong(); }
-	void DecreaseVolume() { m_Speaker.Decrement(); PlayCurrSong(); }
-	void ChangeDevice() //here we change device
+	void run();//here is our menu
+	void increaseVolume() { load_speaker_.Increment(); playCurrSong(); }
+	void decreaseVolume() { load_speaker_.Decrement(); playCurrSong(); }
+	void changeDevice() //here we change device
 	{
-		if (m_eType == eCD)
-			SetDevice(eCassete);
+		if (device_type_ == eCD)
+			setDevice(eCassete);
 		else
-			SetDevice(eCD);
-		m_pDevice->SetCurrSong(0);
+			setDevice(eCD);
+		p_audio_device_->SetCurrSong(0);
 	}
 	bool OnOff();//turn of/onn our system
-	void NextSong() { m_pDevice->SetCurrSong(m_pDevice->GetCurrSong() + 1); PlayCurrSong(); }
-	void PrevSong() { m_pDevice->SetCurrSong(m_pDevice->GetCurrSong() - 1); PlayCurrSong(); }
-	void SetDevice(eDeviceType eType)//here we load device
+	void NextSong() { p_audio_device_->SetCurrSong(p_audio_device_->GetCurrSong() + 1); playCurrSong(); }
+	void PrevSong() { p_audio_device_->SetCurrSong(p_audio_device_->GetCurrSong() - 1); playCurrSong(); }
+	void setDevice(eDeviceType eType)//here we load device
 	{
-		DeleteDevice();
-		m_eType = eType;
+		deleteDevice();
+		device_type_ = eType;
 		if (eType == eCD)
 		{
-			m_pDevice = new (CD);
-			((CD*)m_pDevice)->Load("CD\\");
-			((CD*)m_pDevice)->ShowDevice();
-			PlayCurrSong();
+			p_audio_device_ = new (CD);
+			((CD*)p_audio_device_)->Load("CD\\");
+			((CD*)p_audio_device_)->ShowDevice();
+			playCurrSong();
 		}
 		if (eType == eCassete)
 		{
-			m_pDevice = new (Cassete);
-			((Cassete*)m_pDevice)->Load("Cassete\\");
-			((Cassete*)m_pDevice)->ShowDevice();
-			PlayCurrSong();
+			p_audio_device_ = new (Cassete);
+			((Cassete*)p_audio_device_)->Load("Cassete\\");
+			((Cassete*)p_audio_device_)->ShowDevice();
+			playCurrSong();
 
 		}
 
 	}
-	AudioDevice* GetDevice() { return m_pDevice; }
+	AudioDevice* GetDevice() { return p_audio_device_; }
 	void AddToFavourites(Song);
 	void ShowFavourites();
 	void DeleteFromFavourites();
-private:
-	void DeleteDevice() { if (m_pDevice != NULL) delete m_pDevice; }
-	void PlayCurrSong()//here we "play" our song
-	{
-		if (m_bCondition != true)
-			return;
-		int min, sec;
-		system("cls");
-		cout << m_pDevice->GetSong(m_pDevice->GetCurrSong()).GetTitle() << endl;
-		min = (m_pDevice->GetSong(m_pDevice->GetCurrSong()).GetDuration()) / 60;
-		sec = (m_pDevice->GetSong(m_pDevice->GetCurrSong()).GetDuration()) % 60;
-		cout << (min < 10 ? "0" : "") << min << ":" <<
-			(sec < 10 ? "0" : "") << sec << endl;
-		cout << m_pDevice->GetSong(m_pDevice->GetCurrSong()).GetLyrics() << endl;
-		cout << "Volume: " << m_Speaker.GetVolume() << " %" << endl;
-		cout << endl;
-	}
-	//vars
-	AudioDevice* m_pDevice;
-	LoadSpeaker m_Speaker;
-	bool m_bCondition;
-	eDeviceType m_eType;
-	vector<Song> sFavourites;
+
 };*/
 #endif //AUDIO_SYSTEM_H_

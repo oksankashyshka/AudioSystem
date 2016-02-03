@@ -4,7 +4,7 @@
 #include "CD.h"
 
 //in each folder we have plenty of txt files with information about song
-void CCD::load(std::string way_to_file, const int quantity_songs)
+void CCD::load(const std::string& way_to_file, const int& quantity_songs)
 {
 	std::string buffer;
 	int duration_song;
