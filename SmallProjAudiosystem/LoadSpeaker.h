@@ -9,15 +9,11 @@ public:
 
 	CLoadSpeaker() = default;
 
-	void increment()//if volume less than 100, increase it
-	{
-		if (num_volume_ < MAX_VOL)		num_volume_++;
-	}
-	void decrement()//if volume more than 0, decrease it
-	{
-		if (num_volume_ > MIN_VOL)		num_volume_--;
-	}
-
+	//if volume less than 100, increase it
+	CLoadSpeaker& operator++() { if (num_volume_ < MAX_VOL)		++num_volume_; }
+	//if volume more than 0, decrease it
+	CLoadSpeaker& operator--() { if (num_volume_ > MIN_VOL)		--num_volume_; }
+	
 	int getVolume() { return num_volume_; }//function that return volume to us
 
 private:
