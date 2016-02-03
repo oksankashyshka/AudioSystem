@@ -13,23 +13,23 @@
 
 class CAudioSystem
 {
-public:
-	CAudioSystem();
-	~CAudioSystem();
+ public:
+  CAudioSystem();
+  ~CAudioSystem();
 
-private:
-	enum eDeviceType { eCD, eCassete };
+ private:
+  enum eDeviceType { eCD, eCassete };
 
-	//void deleteDevice() { if (p_audio_device_ != nullptr) delete p_audio_device_; }
-	void playCurrSong();//here we "play" our song
-	//vars
-	//CAudioDevice* p_audio_device_;
-	CLoadSpeaker load_speaker_;
-	std::vector<Song> vec_favourite_song_;
-	eDeviceType device_type_ = eCD;//at first, our Audiodevice is CD
-	bool system_on_ = false;//at first, our system is off
+  //void deleteDevice() { if (p_audio_device_ != nullptr) delete p_audio_device_; }
+  void playCurrSong();//here we "play" our song
+  //vars
+  //CAudioDevice* p_audio_device_;
+  CLoadSpeaker load_speaker_;
+  std::vector<Song> vec_favourite_song_;
+  eDeviceType device_type_ = eCD;//at first, our Audiodevice is CD
+  bool system_on_ = false;//at first, our system is off
 
-	//std::unique_ptr<CAudioDevice> p_audio_device_ = std::unique_ptr<CAudioDevice>(new CCD);
+  //std::unique_ptr<CAudioDevice> p_audio_device_ = std::unique_ptr<CAudioDevice>(new CCD);
 
 };
 

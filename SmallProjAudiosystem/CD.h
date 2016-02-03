@@ -4,13 +4,12 @@
 #define CD_H_
 
 #include "AudioDevice.h"
-class CCD :
-	public CAudioDevice
+class CCD : public CAudioDevice
 {
-public:
-	CCD() = default;
-	void load(const std::string& adress, const int& quantity_songs = 10) override;
-	void showDevice() const override;
+ public:
+  CCD() = default;
+  void load(const std::string& adress, const int& quantity_songs = 10) override;
+  void showDevice() const override;
 };
 
 #endif//CD_H_
